@@ -10,15 +10,23 @@ import Certificates from '../../pages/Certificates';
 import Contact from '../../pages/Contact';
 
 // Add each new page as another child here (then enable it in config/routes.js).
-const router = createBrowserRouter([
-  { path: '/', element: <MainLayout />, children: [
-    { index: true, element: <Home /> },
-    { path: 'about', element: <About /> }, { path: 'skills', element: <Skills /> },
-    { path: 'projects', element: <Projects /> }, { path: 'projects/:slug', element: <ProjectDetails /> },
-    { path: 'learning', element: <Learning /> }, { path: 'certificates', element: <Certificates /> },
-    { path: 'contact', element: <Contact /> },
-  ] },
-]);
+const router = createBrowserRouter(
+  [
+    { path: '/', element: <MainLayout />, children: [
+      { index: true, element: <Home /> },
+      { path: 'about', element: <About /> },
+      { path: 'skills', element: <Skills /> },
+      { path: 'projects', element: <Projects /> },
+      { path: 'projects/:slug', element: <ProjectDetails /> },
+      { path: 'learning', element: <Learning /> },
+      { path: 'certificates', element: <Certificates /> },
+      { path: 'contact', element: <Contact /> },
+    ] },
+  ],
+  {
+    basename: import.meta.env.BASE_URL,
+  }
+);
 
 export default function AppRouter() {
   return <RouterProvider router={router} />;
