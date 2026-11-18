@@ -1,0 +1,36 @@
+export default {
+  home: { featured: 'Featured projects', viewAll: 'All projects' },
+  state: { loading: 'Loading…', error: 'Could not load data. Please try again later.', notConfigured: 'The database is not connected yet (see README).', empty: 'Nothing published yet.', noMatch: 'No results match the filters.', notFound: 'Page not found.' },
+  status: { planned: 'Planned', in_progress: 'In progress', completed: 'Completed' },
+  projects: { explore: 'Explore project',  intro: 'Projects I am actually working on, with their real status.', objective: 'Objective', demo: 'Live demo', docs: 'Documentation' },
+  learning: {
+    open: { course: 'Open course', book: 'View book', podcast: 'Listen', article: 'Read source', lab: 'Open lab', other: 'View source' },
+    empty: { completed: 'No completed stages recorded yet.', in_progress: 'Nothing in progress right now.', planned: 'No upcoming plans recorded.' }, eyebrow: 'My journey',
+    section: { completed: 'Completed', in_progress: 'In progress', planned: 'Upcoming' }, notes: 'My notes', relatedSkills: 'Related skills', noDetails: 'No extra details yet.', openSource: 'Open source', clear: 'Clear filter', showAll: 'Show all', filterBy: 'Filter by status', showing: 'Showing', items: 'items', noMatchReset: 'Reset type', emptyFiltered: 'No stages in this group yet.', intro: 'What I am learning, have finished and plan to study, with real statuses.', status: 'Status', category: 'Type', sort: 'Sort', allStatuses: 'All statuses', allCategories: 'All types', sortRecent: 'Most recent', sortTitle: 'Title',
+    view: { label: 'View mode', cards: 'Cards', list: 'List' },
+    cat: { course: 'Course', book: 'Book', podcast: 'Podcast', article: 'Article / Docs', lab: 'Practical lab', other: 'Other' } },
+  skills: { all: 'All', fields: 'Skill fields', noLevel: 'No level set', intro: 'Skills by field, labelled by learning level — no percentages.', cat: { cybersecurity: 'Cybersecurity', web: 'Programming & Web Development', agri: 'Agricultural Engineering', tools: 'Tools & Technologies' }, level: { beginner: 'Beginner', learning: 'Learning', intermediate: 'Intermediate', practiced: 'Practiced' } },
+  about: { bio: 'Introduction', education: 'Academic background', direction: 'Career direction', goals: 'Goals' },
+  certs: {
+    view: 'View certificate', intro: 'Verified certificates only.', empty: 'No certificates published yet.', verify: 'Verify certificate',
+    zoom: 'Zoom', zoomOut: 'Zoom out', close: 'Close', prev: 'Previous certificate', next: 'Next certificate', id: 'Credential ID',
+    openFile: 'Open full file', pdf: 'PDF file', pdfHint: 'Select to view the full certificate', openHint: 'You can open the file in a new tab',
+    noFile: 'No image or file for this certificate yet', imgFailed: 'Could not load the certificate image',
+  },
+  contact: { intro: 'I would be glad to hear from you.', name: 'Name', email: 'Email', message: 'Message', send: 'Send', sending: 'Sending…', sent: 'Your message was sent and stored.', failed: 'Sending failed. Please try again.', links: 'Links', err: { name: 'Enter a valid name', email: 'Invalid email', message: 'Message too short (min 10 characters)' } },
+  social: {
+    title: 'Find me online', intro: 'My profiles on technical and professional platforms.',
+    desc: { github: 'Code & projects', linkedin: 'Professional profile', tryhackme: 'Hands-on cybersecurity practice', hackthebox: 'Hands-on cybersecurity practice', youtube: 'YouTube channel', facebook: 'Facebook', instagram: 'Instagram', telegram: 'Telegram', whatsapp: 'WhatsApp', twitter: 'X account', medium: 'Articles', leetcode: 'Coding practice', kaggle: 'Data science', mail: 'Email', email: 'Email' },
+  },
+  brand: 'Sameh Abobakr',
+  nav: { home: 'Home', about: 'About', skills: 'Skills', projects: 'Projects', learning: 'Learning Journey', certificates: 'Certificates', contact: 'Contact' },
+  ui: { soon: 'Soon', menu: 'Menu', switchLang: 'العربية', switchTheme: 'Toggle theme', mainNav: 'Main navigation', skip: 'Skip to content', opensNew: '(opens in a new tab)' },
+  hero: {
+    eyebrow: 'Agricultural engineer and web developer, learning cybersecurity',
+    name: 'Sameh Abobakr',
+    areas: ['Cybersecurity', 'Web Development', 'Agricultural Engineering'],
+    intro: 'I build educational platforms and web tools, study cybersecurity step by step, and document what I learn along the way. My goal is to bring software and security to agriculture.',
+    ctaProjects: 'Explore My Projects', ctaLearning: 'My Learning Journey', ctaContact: 'Contact Me',
+    focusTitle: 'Focus areas', portraitAlt: 'Placeholder for a profile photo', portraitNote: 'Portrait to be added',
+  },
+};

@@ -1,0 +1,40 @@
+@import './tokens.css';
+@import './typography.css';
+@import './surfaces.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body { @apply bg-bg font-sans text-ink antialiased; line-height: var(--lh-body); transition: background-color var(--duration), color var(--duration); }
+  /* Form controls and dialogs do not inherit the page font by default. */
+  button, input, select, textarea, optgroup, option, dialog { font-family: inherit; }
+  :focus-visible { @apply outline outline-2 outline-offset-2 outline-primary; }
+  ::selection { background: rgb(var(--primary) / .35); color: inherit; }
+  /* Backdrop: two soft colour glows and a faint technical grid, fixed behind everything. Static, so it costs nothing at scroll time. */
+  body { position: relative; }
+  body::before { content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background:
+      radial-gradient(60rem 36rem at 88% -8%, rgb(var(--primary) / .20), transparent 62%),
+      radial-gradient(50rem 34rem at 4% 108%, rgb(var(--accent) / .20), transparent 60%),
+      linear-gradient(rgb(var(--primary) / .045) 1px, transparent 1px) 0 0 / 56px 56px,
+      linear-gradient(90deg, rgb(var(--primary) / .045) 1px, transparent 1px) 0 0 / 56px 56px;
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%); mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%); }
+  :root[data-theme='light'] body::before { opacity: .55; }
+  /* Arabic: keep letters joined (no tracking) and let long headings wrap cleanly. */
+  :root[lang='ar'] body { letter-spacing: 0; word-spacing: 0; }
+  h1, h2, h3 { text-wrap: balance; }
+  /* Skip link: hidden until it receives keyboard focus. */
+  .skip-link { @apply fixed start-3 top-3 z-[60] -translate-y-20 rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-ink transition-transform duration-base; }
+  .skip-link:focus { @apply translate-y-0; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+@keyframes reveal { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.reveal { animation: reveal 350ms ease both; }
+
+/* Lightbox (native <dialog>) */
+@keyframes dialog-in { from { opacity: 0; transform: scale(.98); } to { opacity: 1; transform: none; } }
+@keyframes backdrop-in { from { opacity: 0; } to { opacity: 1; } }
+.lightbox { animation: dialog-in 180ms ease both; }
+.lightbox::backdrop { background: rgb(8 12 10 / .82); animation: backdrop-in 180ms ease both; }
